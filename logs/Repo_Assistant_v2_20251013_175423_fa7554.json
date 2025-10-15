@@ -1,0 +1,144 @@
+{
+  "agent_name": "Repo_Assistant_v2",
+  "system_prompt": [
+    "\nYou have access to comprehensive documentation about Microsoft's AI agent framework, \nincluding setup guides, API references, best practices, and troubleshooting information.\n\nInstructions:\n1. ALWAYS use the search tool to find relevant information\n2. Provide specific, accurate answers from the documentation\n3. Include citations by mentioning the source file\n4. If information is not found, clearly state this and provide general guidance\n5. Be concise but comprehensive\n\nAlways include references by citing the filename of the source material you used.  \nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.\n\n"
+  ],
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "What is RAG?",
+          "timestamp": "2025-10-13T17:54:18.174567+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You have access to comprehensive documentation about Microsoft's AI agent framework, \nincluding setup guides, API references, best practices, and troubleshooting information.\n\nInstructions:\n1. ALWAYS use the search tool to find relevant information\n2. Provide specific, accurate answers from the documentation\n3. Include citations by mentioning the source file\n4. If information is not found, clearly state this and provide general guidance\n5. Be concise but comprehensive\n\nAlways include references by citing the filename of the source material you used.  \nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CikB0e2Kb3NrEd+x9/3UxNHsNTeki/I1lLsvZQ5lDIkQenntPOLygDf4zwpoAdHtim+ACgopNH88QHMX1YwHgZJN6d0htENlBy2bf+GRb82K3AiA0f9ctCLVkANhT8njh+YCHJGyxGLqpVhHzODKIfSqQWT1jsFpB3iXa/OJ2Gca0gnY4vwyL96s7MqV2T1tSOl1/7AKWwHR7YpvG9k8Ba2WyyO5l2xZQjyRf+RyhBwOz5GrHekXImIFbIdTK2FUbfWqEg9EzuKRfna6+zVBFe/CIbG8+3ue39qYC6EqA58DVmYohfgadqWU2rASQtDInxE=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "What is RAG?"
+          },
+          "tool_call_id": "pyd_ai_f349cbfd41da4693998f444406cf8cc9",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 238,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 50,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 33,
+          "text_prompt_tokens": 238
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-13T17:54:19.129346+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "yTztaLDRMrrgz7IP7vOymQc",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 13000,
+              "content": "ned infrastructures and ethical guidelines, these agentic capabilities enable richer, more dynamic, and ultimately more useful AI interactions for both enterprises and end-users.\n\n### Got More Questions about Agentic RAG?\n\nJoin the [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.\n\n## Additional Resources\n\n- <a href=\"https://learn.microsoft.com/training/modules/use-own-data-azure-openai\" target=\"_blank\">Implement Retrieval Augmented Generation (RAG) with Azure OpenAI Service: Learn how to use your own data with the Azure OpenAI Service. This Microsoft Learn module provides a comprehensive guide on implementing RAG</a>\n- <a href=\"https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai\" target=\"_blank\">Evaluation of generative AI applications with Azure AI Foundry: This article covers the evaluation and comparison of models on publicly available datasets, including Agentic AI applications and RAG architectures</a>\n- <a href=\"https://weaviate.io/blog/what-is-agentic-rag\" target=\"_blank\">What is Agentic RAG | Weaviate</a>\n- <a href=\"https://ragaboutit.com/agentic-rag-a-complete-guide-to-agent-based-retrieval-augmented-generation/\" target=\"_blank\">Agentic RAG: A Complete Guide to Agent-Based Retrieval Augmented Generation \u2013 News from generation RAG</a>\n- <a href=\"https://huggingface.co/learn/cookbook/agent_rag\" target=\"_blank\">Agentic RAG: turbocharge your RAG with query reformulation and self-query! Hugging Face Open-Source AI Cookbook</a>\n- <a href=\"https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U\" target=\"_blank\">Adding Agentic Layers to RAG</a>\n- <a href=\"https://www.youtube.com/watch?v=zeAyuLc_f3Q&t=244s\" target=\"_blank\">The Future of Knowledge Assistants: Jerry Liu</a>\n- <a href=\"https://www.youtube.com/watch?v=AOSjiXP1jmQ\" target=\"_blank\">How to Build Agentic RAG Systems</a>\n- <a href=\"https://ignite.microsoft.com/sessions/BRK102?source=se",
+              "filename": "05-agentic-rag/README.md"
+            },
+            {
+              "start": 13000,
+              "content": " process can be very challenging. See the following example from Literal AI (the company behind Chainlit) for an Agent run:\n\n![AgentRunExample](../../../translated_images/AgentRunExample.471a94bc40cbdc0cd04c1f43c8d8c9b751f10d97918c900e29cb3ba0d6aa4c00.en.png)\n\n## Conclusion\n\nAgentic RAG represents a natural evolution in how AI systems handle complex, data-intensive tasks. By adopting a looped interaction pattern, autonomously selecting tools, and refining queries until achieving a high-quality result, the system moves beyond static prompt-following into a more adaptive, context-aware decision-maker. While still bounded by human-defined infrastructures and ethical guidelines, these agentic capabilities enable richer, more dynamic, and ultimately more useful AI interactions for both enterprises and end-users.\n\n### Got More Questions about Agentic RAG?\n\nJoin the [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) to connect with other learners, attend office hours, and get your AI Agents questions answered.\n\n## Additional Resources\n\n- <a href=\"https://learn.microsoft.com/training/modules/use-own-data-azure-openai\" target=\"_blank\">Implement Retrieval Augmented Generation (RAG) with Azure OpenAI Service: Learn how to use your own data with the Azure OpenAI Service. This Microsoft Learn module provides a comprehensive guide on implementing RAG</a>\n- <a href=\"https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai\" target=\"_blank\">Evaluation of generative AI applications with Azure AI Foundry: This article covers the evaluation and comparison of models on publicly available datasets, including Agentic AI applications and RAG architectures</a>\n- <a href=\"https://weaviate.io/blog/what-is-agentic-rag\" target=\"_blank\">What is Agentic RAG | Weaviate</a>\n- <a href=\"https://ragaboutit.com/agentic-rag-a-complete-guide-to-agent-based-retrieval-augmented-generation/\" target=\"_blank\">Agentic RAG: A Complete Guide to Agent-Based Retrieval Augmented Gen",
+              "filename": "translations/en/05-agentic-rag/README.md"
+            },
+            {
+              "start": 14000,
+              "content": "ng Agentic AI applications and RAG architectures</a>\n- <a href=\"https://weaviate.io/blog/what-is-agentic-rag\" target=\"_blank\">What is Agentic RAG | Weaviate</a>\n- <a href=\"https://ragaboutit.com/agentic-rag-a-complete-guide-to-agent-based-retrieval-augmented-generation/\" target=\"_blank\">Agentic RAG: A Complete Guide to Agent-Based Retrieval Augmented Generation \u2013 News from generation RAG</a>\n- <a href=\"https://huggingface.co/learn/cookbook/agent_rag\" target=\"_blank\">Agentic RAG: turbocharge your RAG with query reformulation and self-query! Hugging Face Open-Source AI Cookbook</a>\n- <a href=\"https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U\" target=\"_blank\">Adding Agentic Layers to RAG</a>\n- <a href=\"https://www.youtube.com/watch?v=zeAyuLc_f3Q&t=244s\" target=\"_blank\">The Future of Knowledge Assistants: Jerry Liu</a>\n- <a href=\"https://www.youtube.com/watch?v=AOSjiXP1jmQ\" target=\"_blank\">How to Build Agentic RAG Systems</a>\n- <a href=\"https://ignite.microsoft.com/sessions/BRK102?source=sessions\" target=\"_blank\">Using Azure AI Foundry Agent Service to scale your AI agents</a>\n\n### Academic Papers\n\n- <a href=\"https://arxiv.org/abs/2303.17651\" target=\"_blank\">2303.17651 Self-Refine: Iterative Refinement with Self-Feedback</a>\n- <a href=\"https://arxiv.org/abs/2303.11366\" target=\"_blank\">2303.11366 Reflexion: Language Agents with Verbal Reinforcement Learning</a>\n- <a href=\"https://arxiv.org/abs/2305.11738\" target=\"_blank\">2305.11738 CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing</a>\n- <a href=\"https://arxiv.org/abs/2501.09136\" target=\"_blank\">2501.09136 Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG</a>\n\n## Previous Lesson\n\n[Tool Use Design Pattern](../04-tool-use/README.md)\n\n## Next Lesson\n\n[Building Trustworthy AI Agents](../06-building-trustworthy-agents/README.md)",
+              "filename": "05-agentic-rag/README.md"
+            },
+            {
+              "start": 14000,
+              "content": "I Agents questions answered.\n\n## Additional Resources\n\n- <a href=\"https://learn.microsoft.com/training/modules/use-own-data-azure-openai\" target=\"_blank\">Implement Retrieval Augmented Generation (RAG) with Azure OpenAI Service: Learn how to use your own data with the Azure OpenAI Service. This Microsoft Learn module provides a comprehensive guide on implementing RAG</a>\n- <a href=\"https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai\" target=\"_blank\">Evaluation of generative AI applications with Azure AI Foundry: This article covers the evaluation and comparison of models on publicly available datasets, including Agentic AI applications and RAG architectures</a>\n- <a href=\"https://weaviate.io/blog/what-is-agentic-rag\" target=\"_blank\">What is Agentic RAG | Weaviate</a>\n- <a href=\"https://ragaboutit.com/agentic-rag-a-complete-guide-to-agent-based-retrieval-augmented-generation/\" target=\"_blank\">Agentic RAG: A Complete Guide to Agent-Based Retrieval Augmented Generation \u2013 News from generation RAG</a>\n- <a href=\"https://huggingface.co/learn/cookbook/agent_rag\" target=\"_blank\">Agentic RAG: turbocharge your RAG with query reformulation and self-query! Hugging Face Open-Source AI Cookbook</a>\n- <a href=\"https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U\" target=\"_blank\">Adding Agentic Layers to RAG</a>\n- <a href=\"https://www.youtube.com/watch?v=zeAyuLc_f3Q&t=244s\" target=\"_blank\">The Future of Knowledge Assistants: Jerry Liu</a>\n- <a href=\"https://www.youtube.com/watch?v=AOSjiXP1jmQ\" target=\"_blank\">How to Build Agentic RAG Systems</a>\n- <a href=\"https://ignite.microsoft.com/sessions/BRK102?source=sessions\" target=\"_blank\">Using Azure AI Foundry Agent Service to scale your AI agents</a>\n\n### Academic Papers\n\n- <a href=\"https://arxiv.org/abs/2303.17651\" target=\"_blank\">2303.17651 Self-Refine: Iterative Refinement with Self-Feedback</a>\n- <a href=\"https://arxiv.org/abs/2303.11366\" target=\"_blank\">2303.11366 Reflexion: Language Agents with Verbal Reinf",
+              "filename": "translations/en/05-agentic-rag/README.md"
+            },
+            {
+              "start": 3000,
+              "content": "and extended workflows.\n- **Governance, Transparency, and Trust:** Learn about the importance of governance and transparency, including explainable reasoning, bias control, and human oversight.\n\n## What is Agentic RAG?\n\nAgentic Retrieval-Augmented Generation (Agentic RAG) is an emerging AI paradigm where large language models (LLMs) autonomously plan their next steps while pulling information from external sources. Unlike static retrieval-then-read patterns, Agentic RAG involves iterative calls to the LLM, interspersed with tool or function calls and structured outputs. The system evaluates results, refines queries, invokes additional tools if needed, and continues this cycle until a satisfactory solution is achieved. This iterative \u201cmaker-checker\u201d style improves correctness, handles malformed queries, and ensures high-quality results.\n\nThe system actively owns its reasoning process, rewriting failed queries, choosing different retrieval methods, and integrating multiple tools\u2014such as vector search in Azure AI Search, SQL databases, or custom APIs\u2014before finalizing its answer. The distinguishing quality of an agentic system is its ability to own its reasoning process. Traditional RAG implementations rely on pre-defined paths, but an agentic system autonomously determines the sequence of steps based on the quality of the information it finds.\n\n## Defining Agentic Retrieval-Augmented Generation (Agentic RAG)\n\nAgentic Retrieval-Augmented Generation (Agentic RAG) is an emerging paradigm in AI development where LLMs not only pull information from external data sources but also autonomously plan their next steps. Unlike static retrieval-then-read patterns or carefully scripted prompt sequences, Agentic RAG involves a loop of iterative calls to the LLM, interspersed with tool or function calls and structured outputs. At every turn, the system evaluates the results it has obtained, decides whether to refine its queries, invokes additional tools if needed, and continues this",
+              "filename": "05-agentic-rag/README.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_f349cbfd41da4693998f444406cf8cc9",
+          "metadata": null,
+          "timestamp": "2025-10-13T17:54:19.141469+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You have access to comprehensive documentation about Microsoft's AI agent framework, \nincluding setup guides, API references, best practices, and troubleshooting information.\n\nInstructions:\n1. ALWAYS use the search tool to find relevant information\n2. Provide specific, accurate answers from the documentation\n3. Include citations by mentioning the source file\n4. If information is not found, clearly state this and provide general guidance\n5. Be concise but comprehensive\n\nAlways include references by citing the filename of the source material you used.  \nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CisB0e2Kb9QdloWdJ83hxZyxmV3Ph1Sxx3agOdp46I1EEom8vMBKqkGc1k3kCmwB0e2Kb/kzG5/WVf/8I6/J6TH8++mz9QSyzNlDy8cMLRXyLucpLyLI6ze7BrhLHcldZ69E5a72lnvbbpg0PICS10xQ12dD2WG//etuHMRh+Z/vdqx/8pKUug0Ao2m87gy9lqOOZFg9ynHWmcgKhQIB0e2Kbx5V+RXRP1C/xi+SjpfjSLIQeQSCHmvaLs4W8fLhZ9eKJtA0UatpeD3zjsYllu0RPxrB75gvkOFrUzWT/yRpATycyH6vquIOwvgGajjxXPFk9b1FoUbCrOj5vhoWvogejdjaL3TLhYmxTuDdaHpM1Fq8gXddAYhFEmsEb2rHFLagnLWJduRrqFAo+BCg+t92uoUjWnDjaK48a6RC26sH+ydyAJolsE364M1lHY2Yv+VvUmTTmcdEwrzU7egQBFVqa7j6XSnCS4STBJR0DNe6pGNEmiTNuDX/zeILrTYTyjc+9AcOkTFUHq3zIUsAD0NLMIscjFEN3HHjRliRt5yzqqYKgQIB0e2Kbx5CBOLkK7mJ4KiZ69lqUs0ymhsNeQWF/JKEgEge7CI4uP/dX2/faDPjZyUFDeklg66qUfrHEzb+I9h2/uBt6DjgsiJ8ln9Wnfp44ie7H3YnBr1Vz7ny0eQJkVw5PXB1XggQ7CHKPj6kqHQ4r/mg2zfHM74z7s9/KN7cYJ0rjFQ9tQDnSK24tQzM/aEva4kwPPXFN0D50ksuVLNA5p3u1RiGiKSgdFMyeA+EcrqV6WC2yAVDw8GT6JogJ/yHHNbYDWtTQ4d1HY+bs/sYIGPal4hKX4YUyJT6ijQwMrTNK08nwwym7dM5n8/cXXwubP/zjFEc6MH4qbAJKd7srQqfAgHR7Ypv/am+NHFVqnuow8jCvAmPZWCs71M0SWXb/r6yQ+HH4t0TCwQrYR9hd+3GVEE2S77X8g3ZRyRxp1GsGpzAm81cNtOo7wwLjV99FnUmmIIOdf+ZyA3g45JOe7+0ANDPbCFS9io0BBeL7Z9e8EMYmzIk/4l6DB4KrR4LJrYSn1tqiva/Har8vE0LCpbD33Yn3YOmUsg7UbjUHVKpGVyjrAEv+qbZQgQXGIh4H1FLt76Dh1xYV5gZmDxUDHcJrWMWqJxgGAPgQbImmE5RF7QdAdp+uTB4nvNEZ8WiW8j4HVNiwXUNHwOXOwiX7b3GigLDUUZT1AtN1dO/nJM3SIPTq2ygMhtMcuAVap9XcS46j/7J4mnkSdv5AeMAuujTCoYCAdHtim/jknffAUHv6Zp7te4pkFaUvOh2FYV8+q3Q9cFffMqRza0DNyAUCvex7DpEoZrszfHaGMmuE+W20tvQe/ElfQReGwD++Ya3tGbjgGVbDjFNnpnOMBDjHU1pBA2SaG5Qik6nFYxY6OqDMTLOJnhxM9dJNmtVegA/1cNPoYTVDssUC03QpQOZAVa+vrB2W14eg+BZcV6V8vgVrMPSpLzAlQWKw09dbeHRE8vo2lckc5P2Ll9qo6meRdGv1bFPlEKQ130QHhKjzCa09MGdVkolhkX2UE9/YeC6GIxl1JHEUpAhqMMEIyenZF69WP27i2EwJGmAGf1ljaa0xlrLYwQwE1npGgqRAgHR7YpvjUqsKsRov31N+NZjY1f7E0rfY4eoGcCPwVRaE95NgB8xOn020ji+JpYYQzZ2dWV/DIQmygJpZqtEefL3PhDN5cGk8Sk5kOqnzjuZGA3eT44RJFrkSb4I2QJlRUk744VCdCx9wZbrJ+3KJQGjhtoeYuIR40UnCN8XauTS+NFd2kXCouNu/fAEXNqlHDTCbuk5c3w9erckZTV1bfklfRPLn/P0+R7HTNltAQkUobXMGinM/koDgN35Z3J7KZQ1NbrRytV3qTOkbCgR6iBh3NFSWXrj9Mwga6ASjq6AtHCwREIcpk/WguTk74tTitNAbSpDjDgYR9ElZkH4quuZF+PRIRZYr122y1ZrLGKeKQqOAgHR7Ypvb5BGHcThXOEzEkvixUH/zb7jyk1IoNXKNPwkAy/2pQQHeB0M4ifJxgh4A4chKT7gpB45YJhKI7Vj/Bx3kASujGZz/RvQ3Yq9AuwjTTCQqBhaKcDXDw1dkyAAecamW2xRuZGQQ2VSHh5H/J5BApZjMJMZSaodwRxDPKJxAXIqZk8GgyxVSTwoqv6+Jw4YcfRv0NWeLOEMdgNxyqwbxPUNsqmmA0OD6Y58zDO4bgC8iHZF7oDTvqDasv12qov+bHh3XSSBepEPHoZHf6d4xKc1Jh8hSg9cHBp3NgFoYotW3LTNIaC8tntW0L3reoI6kS4NY1zgKKUCUDYDUmcfJxXEYjlKjOE6VvF+lw==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "Retrieval Augmented Generation (RAG) is a method that allows Large Language Models (LLMs) to use your own data. This process enhances the LLM's ability to answer questions by providing it with relevant information from external data sources.\n\nAgentic Retrieval-Augmented Generation (Agentic RAG) is an advanced paradigm where LLMs autonomously plan their next steps and pull information from external sources in an iterative process. Unlike traditional RAG, which typically follows a static \"retrieval-then-read\" pattern, Agentic RAG involves:\n\n*   **Iterative Calls:** The LLM makes repeated calls, interspersed with tool or function calls.\n*   **Evaluation and Refinement:** The system evaluates results, refines queries, and invokes additional tools as needed.\n*   **Autonomous Reasoning:** The system actively owns its reasoning process, selecting different retrieval methods and integrating various tools (like vector search, SQL databases, or custom APIs) until a satisfactory solution is achieved.\n\nThis agentic approach improves correctness, handles malformed queries, and ensures high-quality results by allowing the system to adapt and make decisions based on the information it finds, rather than following a predefined path.\n\nFor more information, you can refer to:\n*   [Implement Retrieval Augmented Generation (RAG) with Azure OpenAI Service](https://learn.microsoft.com/training/modules/use-own-data-azure-openai)\n*   [What is Agentic RAG | Weaviate](https://weaviate.io/blog/what-is-agentic-rag)\n*   [05-agentic-rag/README.md](https://github.com/microsoft/AI-Agent-Framework/blob/main/05-agentic-rag/README.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3206,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 692,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 318,
+          "text_prompt_tokens": 3206
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-13T17:54:23.750818+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "zDztaOv5C6Kez7IP4qDJ4AI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

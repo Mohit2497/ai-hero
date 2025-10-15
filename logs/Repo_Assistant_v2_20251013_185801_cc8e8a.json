@@ -1,0 +1,144 @@
+{
+  "agent_name": "Repo_Assistant_v2",
+  "system_prompt": [
+    "\nYou have access to comprehensive documentation about Microsoft's AI agent framework, \nincluding setup guides, API references, best practices, and troubleshooting information.\n\nInstructions:\n1. ALWAYS use the search tool to find relevant information\n2. Provide specific, accurate answers from the documentation\n3. Include citations by mentioning the source file\n4. If information is not found, clearly state this and provide general guidance\n5. Be concise but comprehensive\n\nAlways include references by citing the filename of the source material you used.  \nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.\n\n"
+  ],
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "Multi-Agent Patterns",
+          "timestamp": "2025-10-13T18:57:58.704640+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You have access to comprehensive documentation about Microsoft's AI agent framework, \nincluding setup guides, API references, best practices, and troubleshooting information.\n\nInstructions:\n1. ALWAYS use the search tool to find relevant information\n2. Provide specific, accurate answers from the documentation\n3. Include citations by mentioning the source file\n4. If information is not found, clearly state this and provide general guidance\n5. Be concise but comprehensive\n\nAlways include references by citing the filename of the source material you used.  \nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kb24mExCFGSiZd7hoqRR1uUpC3g3MyyCA09BPlhGQK4AKcAHR7YpvrCHSkrEtrrfxCPhTBBbcvL1rpGlfUV2Djwv/z4U1zjX9hi3wyHTCuAYbzeSu3jmue2XaXZYatA8OJ+VK0ss+K/UJVrVm+vDkNAdLGU50hK7H3uyrMQ18X5UQWRkoJqNLk2Rv9FE492tH7XUKUQHR7YpvmRu8ie+avnwE9xzr4P/m0/ANL5LGXWPgck/g0T76XfMi4+53T75tHyNbEF+BvZjX9Hu6n6HM3nW8KHTIEswnqMNn5FnqBGVw2AbWkA==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "Multi-Agent Patterns"
+          },
+          "tool_call_id": "pyd_ai_a43812ab09ff4ae9aef73a74c875311f",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 237,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 45,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 29,
+          "text_prompt_tokens": 237
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-13T18:57:59.515767+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "tkvtaKCbB8OHz7IP94ig-AI",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 15000,
+              "content": "agents needed for any system.\n\n## Solution\n\n[Solution](./solution/solution.md)\n\n## Knowledge checks\n\nQuestion: When should you consider using multi-agents?\n\n- [ ] A1: When you have a small workload and a simple task.\n- [ ] A2: When you have a large workload\n- [ ] A3: When you have a simple task.\n\n[Solution quiz](./solution/solution-quiz.md)\n\n## Summary\n\nIn this lesson, we've looked at the multi-agent design pattern, including the scenarios where multi-agents are applicable, the advantages of using multi-agents over a singular agent, the building blocks of implementing the multi-agent design pattern, and how to have visibility into how the multiple agents are interacting with each other.\n\n### Got More Questions about the Multi-Agent Design Pattern?\n\nJoin the [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.\n\n## Additional resources\n\n- <a href=\"https://microsoft.github.io/autogen/stable/user-guide/core-user-guide/design-patterns/intro.html\" target=\"_blank\">AutoGen design patterns</a>\n- <a href=\"https://www.analyticsvidhya.com/blog/2024/10/agentic-design-patterns/\" target=\"_blank\">Agentic design patterns</a>\n\n\n## Previous Lesson\n\n[Planning Design](../07-planning-design/README.md)\n\n## Next Lesson\n\n[Metacognition in AI Agents](../09-metacognition/README.md)",
+              "filename": "08-multi-agent/README.md"
+            },
+            {
+              "start": 0,
+              "content": "<!--\nCO_OP_TRANSLATOR_METADATA:\n{\n  \"original_hash\": \"b39c052ef109db90ad9251183791e2d6\",\n  \"translation_date\": \"2025-10-02T19:26:43+00:00\",\n  \"source_file\": \"08-multi-agent/code_samples/workflows-agent-framework/README.md\",\n  \"language_code\": \"en\"\n}\n-->\n# Building Multi-Agent Applications with Microsoft Agent Framework Workflow\n\nThis tutorial will help you understand and create multi-agent applications using the Microsoft Agent Framework. We'll cover the basics of multi-agent systems, delve into the architecture of the framework's Workflow component, and explore practical examples in Python and .NET for various workflow patterns.\n\n## 1. Understanding Multi-Agent Systems\n\nAn AI Agent is a system that surpasses the capabilities of a standard Large Language Model (LLM). It can perceive its environment, make decisions, and take actions to achieve specific goals. A multi-agent system consists of multiple agents working together to solve problems that would be challenging or impossible for a single agent to handle alone.\n\n### Common Application Scenarios\n\n  * **Complex Problem Solving**: Breaking down a large task (e.g., planning a company-wide event) into smaller sub-tasks managed by specialized agents (e.g., a budget agent, a logistics agent, a marketing agent).\n  * **Virtual Assistants**: A primary assistant agent delegating tasks like scheduling, research, and booking to other specialized agents.\n  * **Automated Content Creation**: A workflow where one agent drafts content, another reviews it for accuracy and tone, and a third publishes it.\n\n### Multi-Agent Patterns\n\nMulti-agent systems can be organized in various patterns that define their interactions:\n\n  * **Sequential**: Agents operate in a predefined order, like an assembly line. The output of one agent becomes the input for the next.\n  * **Concurrent**: Agents work simultaneously on different parts of a task, and their results are combined at the end.\n  * **Conditional**: The workflow follows different paths bas",
+              "filename": "translations/en/08-multi-agent/code_samples/workflows-agent-framework/README.md"
+            },
+            {
+              "start": 0,
+              "content": "<!--\nCO_OP_TRANSLATOR_METADATA:\n{\n  \"original_hash\": \"1a008c204051cba8d0e253b75f261c41\",\n  \"translation_date\": \"2025-08-30T13:03:17+00:00\",\n  \"source_file\": \"08-multi-agent/README.md\",\n  \"language_code\": \"en\"\n}\n-->\n[![Multi-Agent Design](../../../translated_images/lesson-8-thumbnail.278a3e4a59137d625df92de3f885d2da2a92b1f7017abba25a99fb25edd83a55.en.png)](https://youtu.be/V6HpE9hZEx0?si=A7K44uMCqgvLQVCa)\n\n> _(Click the image above to view video of this lesson)_\n\n# Multi-agent design patterns\n\nWhen working on a project involving multiple agents, it's essential to consider the multi-agent design pattern. However, it may not be immediately obvious when to transition to multi-agents or what benefits they offer.\n\n## Introduction\n\nIn this lesson, we aim to address the following questions:\n\n- What scenarios are suitable for multi-agents?\n- What are the benefits of using multi-agents compared to a single agent handling multiple tasks?\n- What are the key components of implementing the multi-agent design pattern?\n- How can we monitor the interactions between multiple agents?\n\n## Learning Goals\n\nBy the end of this lesson, you should be able to:\n\n- Identify scenarios where multi-agents are applicable.\n- Understand the advantages of using multi-agents over a single agent.\n- Grasp the foundational elements of implementing the multi-agent design pattern.\n\nWhat's the bigger picture?\n\n*Multi-agents are a design pattern that enables multiple agents to collaborate to achieve a shared goal.*\n\nThis approach is widely applied in fields such as robotics, autonomous systems, and distributed computing.\n\n## Scenarios Where Multi-Agents Are Applicable\n\nWhat situations are ideal for using multi-agents? There are numerous scenarios where employing multiple agents is advantageous, particularly in the following cases:\n\n- **Large workloads**: Large tasks can be divided into smaller ones and assigned to different agents, enabling parallel processing and quicker completion. For instance, processing ",
+              "filename": "translations/en/08-multi-agent/README.md"
+            },
+            {
+              "start": 0,
+              "content": "[![Multi-Agent Design](./images/lesson-8-thumbnail.png)](https://youtu.be/V6HpE9hZEx0?si=A7K44uMCqgvLQVCa)\n\n> _(Click the image above to view video of this lesson)_\n\n# Multi-agent design patterns\n\nAs soon as you start working on a project that involves multiple agents, you will need to consider the multi-agent design pattern. However, it might not be immediately clear when to switch to multi-agents and what the advantages are.\n\n## Introduction\n\nIn this lesson, we're looking to answer the following questions:\n\n- What are the scenarios where multi-agents are applicable to?\n- What are the advantages of using multi-agents over just one singular agent doing multiple tasks?\n- What are the building blocks of implementing the multi-agent design pattern?\n- How do we have visibility to how the multiple agents are interacting with each other?\n\n## Learning Goals\n\nAfter this lesson, you should be able to:\n\n- Identify scenarios where multi-agents are applicable\n- Recognize the advantages of using multi-agents over a singular agent.\n- Comprehend the building blocks of implementing the multi-agent design pattern.\n\nWhat's the bigger picture?\n\n*Multi agents are a design pattern that allows multiple agents to work together to achieve a common goal*.\n\nThis pattern is widely used in various fields, including robotics, autonomous systems, and distributed computing.\n\n## Scenarios Where Multi-Agents Are Applicable\n\nSo what scenarios are a good use case for using multi-agents? The answer is that there are many scenarios where employing multiple agents is beneficial especially in the following cases:\n\n- **Large workloads**: Large workloads can be divided into smaller tasks and assigned to different agents, allowing for parallel processing and faster completion. An example of this is in the case of a large data processing task.\n- **Complex tasks**: Complex tasks, like large workloads, can be broken down into smaller subtasks and assigned to different agents, each specializing in a specific as",
+              "filename": "08-multi-agent/README.md"
+            },
+            {
+              "start": 0,
+              "content": "# Building Multi-Agent Applications with Microsoft Agent Framework Workflow\n\nThis tutorial will guide you through understanding and building multi-agent applications using the Microsoft Agent Framework. We will explore the core concepts of multi-agent systems, dive into the architecture of the framework's Workflow component, and walk through practical examples in both Python and .NET for different workflow patterns.\n\n## 1\\. Understanding Multi-Agent Systems\n\nAn AI Agent is a system that goes beyond the capabilities of a standard Large Language Model (LLM). It can perceive its environment, make decisions, and take actions to achieve specific goals. A multi-agent system involves several of these agents collaborating to solve a problem that would be difficult or impossible for a single agent to handle alone.\n\n### Common Application Scenarios\n\n  * **Complex Problem Solving**: Breaking down a large task (e.g., planning a company-wide event) into smaller sub-tasks handled by specialized agents (e.g., a budget agent, a logistics agent, a marketing agent).\n  * **Virtual Assistants**: A primary assistant agent delegating tasks like scheduling, research, and booking to other specialized agents.\n  * **Automated Content Creation**: A workflow where one agent drafts content, another reviews it for accuracy and tone, and a third publishes it.\n\n### Multi-Agent Patterns\n\nMulti-agent systems can be organized in several patterns, which determine how they interact:\n\n  * **Sequential**: Agents work in a predefined order, like an assembly line. The output of one agent becomes the input for the next.\n  * **Concurrent**: Agents work in parallel on different parts of a task, and their results are aggregated at the end.\n  * **Conditional**: The workflow follows different paths based on the output of an agent, similar to an if-then-else statement.\n\n## 2\\. The Microsoft Agent Framework Workflow Architecture\n\nThe Agent Framework's workflow system is an advanced orchestration engine designed to",
+              "filename": "08-multi-agent/code_samples/workflows-agent-framework/README.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_a43812ab09ff4ae9aef73a74c875311f",
+          "metadata": null,
+          "timestamp": "2025-10-13T18:57:59.526856+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You have access to comprehensive documentation about Microsoft's AI agent framework, \nincluding setup guides, API references, best practices, and troubleshooting information.\n\nInstructions:\n1. ALWAYS use the search tool to find relevant information\n2. Provide specific, accurate answers from the documentation\n3. Include citations by mentioning the source file\n4. If information is not found, clearly state this and provide general guidance\n5. Be concise but comprehensive\n\nAlways include references by citing the filename of the source material you used.  \nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CisB0e2Kb0hN6VcN6Z/H2KDG9EOqu+w+s58DmH6RabTsRRBpTg8ZV/7k141zCoEBAdHtim9tGf5A6EbTc9siE19jUgU1FZWO1SPyR3te72rU+JbrI0STVcLa4zgs4LH/UppOXI6gAmVYbQ6S9Cc9GBBoQDkINle30iF+0B6/KM0JDzLAtxCaDYRM6imPhnHKkfSK9ShnkKCylx63kQA1g7HMSHoDDPuG8c0W/fVrAk5ECoQCAdHtim/c6kF+X74uhV2REwnbYg8PfozQ6imG7R9r6hVYvLeB4vfcouxcisx8roXENbnJfZ0ag4qLUYupqjtGgJYbOadRCg2+S2Dbriw6BWAz8R9YjMJ86/+ShW0efO3GIpd93BBacH1fBGyg0ZjBjwWA/ug5PtzdhBKTNyBdEg8MAgkPXCnBDrwYVlNqqovG1+3szia1PDln4Fmt0fPQdba+OMaIl9vRP9RmHHC1hxbWnkDiouRWaEW2BfLKt2oM3Tp6WMU97ZRCwLUjP2eBJ0/cG3r3ZWYX5aUG7IBheL/XXz1+51QV8E9z63w71MhL6DE0nHPlBa3tYfWodKyuis460tIK5wEB0e2Kb/qNNyFDctD/o1hTFnbpbiVWtIjQyCy8WeYz6+PyNXYycjNCFb0j6Kz8iPAnK98JL5pXHjC7GR7dzrzNmhvXxDiGnxvaD7D605gpp2XFsFFEo7ocmk3hAVu4XwyokrUX6SNO9qC6wyZFOEplg1noTCJgomvD3GfgFd3/a22XMoXyD9astDqfHgGaP3SLFSRu8dd+k/nVp+dshe0HqwIwV1wSVLRj2vk7AzEXGFR6cpsKKx3EFswlYJ/bm2fRFTVNMbsJT91dOzP0Jj6oLlscs1INFPlcsl06S2klJQpJM6OtNNs=",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "Multi-agent systems involve multiple AI agents collaborating to solve problems that would be challenging for a single agent [translations/en/08-multi-agent/code_samples/workflows-agent-framework/README.md](https://github.com/microsoft/AI-Agent-Framework/blob/main/translations/en/08-multi-agent/code_samples/workflows-agent-framework/README.md).\n\n**Common Application Scenarios:**\n*   **Complex Problem Solving:** Large tasks can be broken down into smaller sub-tasks and managed by specialized agents (e.g., a budget agent, a logistics agent, a marketing agent for event planning).\n*   **Virtual Assistants:** A primary assistant can delegate tasks like scheduling, research, and booking to specialized agents.\n*   **Automated Content Creation:** A workflow where different agents handle drafting, reviewing, and publishing content.\n\n**Multi-Agent Patterns:**\n*   **Sequential:** Agents operate in a predefined order, where the output of one agent becomes the input for the next, similar to an assembly line.\n*   **Concurrent:** Agents work simultaneously on different parts of a task, and their results are combined at the end.\n*   **Conditional:** The workflow follows different paths based on the output of an agent, much like an if-then-else statement.\n\n**When to consider Multi-Agents:**\nMulti-agents are beneficial for:\n*   **Large workloads:** Dividing large tasks among different agents allows for parallel processing and faster completion.\n*   **Complex tasks:** Breaking down complex tasks into smaller, specialized subtasks.\n\n**Advantages of Multi-Agents:**\n*   Enable multiple agents to collaborate to achieve a shared goal.\n*   Offer benefits over a singular agent handling multiple tasks by allowing for specialization and parallel processing.\n\n**Key Components and Monitoring:**\nThe documentation also covers the building blocks of implementing the multi-agent design pattern and how to monitor the interactions between multiple agents.\n\nFor more detailed information, you can refer to:\n*   [08-multi-agent/README.md](https://github.com/microsoft/AI-Agent-Framework/blob/main/08-multi-agent/README.md)\n*   [translations/en/08-multi-agent/code_samples/workflows-agent-framework/README.md](https://github.com/microsoft/AI-Agent-Framework/blob/main/translations/en/08-multi-agent/code_samples/workflows-agent-framework/README.md)\n*   [translations/en/08-multi-agent/README.md](https://github.com/microsoft/AI-Agent-Framework/blob/main/translations/en/08-multi-agent/README.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2830,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 696,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 108,
+          "text_prompt_tokens": 2830
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-13T18:58:01.156960+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "t0vtaMfcEq6dz7IP5-r94AI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

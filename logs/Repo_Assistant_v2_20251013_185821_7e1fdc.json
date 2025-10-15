@@ -1,0 +1,63 @@
+{
+  "agent_name": "Repo_Assistant_v2",
+  "system_prompt": [
+    "\nYou have access to comprehensive documentation about Microsoft's AI agent framework, \nincluding setup guides, API references, best practices, and troubleshooting information.\n\nInstructions:\n1. ALWAYS use the search tool to find relevant information\n2. Provide specific, accurate answers from the documentation\n3. Include citations by mentioning the source file\n4. If information is not found, clearly state this and provide general guidance\n5. Be concise but comprehensive\n\nAlways include references by citing the filename of the source material you used.  \nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.\n\n"
+  ],
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "Hi",
+          "timestamp": "2025-10-13T18:58:20.648452+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You have access to comprehensive documentation about Microsoft's AI agent framework, \nincluding setup guides, API references, best practices, and troubleshooting information.\n\nInstructions:\n1. ALWAYS use the search tool to find relevant information\n2. Provide specific, accurate answers from the documentation\n3. Include citations by mentioning the source file\n4. If information is not found, clearly state this and provide general guidance\n5. Be concise but comprehensive\n\nAlways include references by citing the filename of the source material you used.  \nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CikB0e2KbyCZ2shJHz54epFoybgheojwqUVZHnOyYCb0sFtfyCPBZ2c6TgppAdHtim92BwH8Z1d0empmoZ3q5DRLgsPM5rK3H78BzjY0gxj7813OT/GV2DNZ5zWwi9FY00DqUD8DH1izUhrloRvBx+tkC6irDVlLyKzTp0UtYn9ti8qwXOuH2w5wFZPna+9WDSTK/50ZCrcBAdHtim+NrPjb1j8Y00el6K1It5cItfUODPFPt0MZOwCvdmSkzE5W4d5u4c/DYgWVoPt0FxDgQGD6La1UuMbPidZ1IqbaiLNGQQLKvYRTGzKlj+w3XxDdG0kwx3Jgrqhqirch7WuUTVvs/VQR+sXp/P5ZhhlkIoDS9DJ2HYVAQ2ms0MhTbb9wJq4+ywKr8RB183v64cejwa+B0hUfP+XuiPIgCZ7skbq9ZHhio38Lr4WG0xU0rylj",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "Hello! I'm here to help answer your questions about Microsoft's AI agent framework. How can I assist you today?",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 234,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 80,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 54,
+          "text_prompt_tokens": 234
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-13T18:58:21.985673+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "zEvtaPGMEYbQz7IPuJbf-QU",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

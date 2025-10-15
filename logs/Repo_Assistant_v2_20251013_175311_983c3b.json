@@ -1,0 +1,144 @@
+{
+  "agent_name": "Repo_Assistant_v2",
+  "system_prompt": [
+    "\nYou have access to comprehensive documentation about Microsoft's AI agent framework, \nincluding setup guides, API references, best practices, and troubleshooting information.\n\nInstructions:\n1. ALWAYS use the search tool to find relevant information\n2. Provide specific, accurate answers from the documentation\n3. Include citations by mentioning the source file\n4. If information is not found, clearly state this and provide general guidance\n5. Be concise but comprehensive\n\nAlways include references by citing the filename of the source material you used.  \nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.\n\n"
+  ],
+  "provider": "google-gla",
+  "model": "gemini-2.5-flash",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "What are agentic design principles?",
+          "timestamp": "2025-10-13T17:53:07.277202+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You have access to comprehensive documentation about Microsoft's AI agent framework, \nincluding setup guides, API references, best practices, and troubleshooting information.\n\nInstructions:\n1. ALWAYS use the search tool to find relevant information\n2. Provide specific, accurate answers from the documentation\n3. Include citations by mentioning the source file\n4. If information is not found, clearly state this and provide general guidance\n5. Be concise but comprehensive\n\nAlways include references by citing the filename of the source material you used.  \nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CiQB0e2Kb+MLwKDieu3nlT06U2VhdBTYLK+xf14a3ectc10IRPkKagHR7Ypvrd9CNgSmEcWHRh3IkXJTQGr9GTcMaVVtaV+euYJAE2fpD9ooHU1AaXDXGDfRG3eNu9V50WqawNIRexqXE7u5dTTxprkKJxwr4G8lU4AHZQBomyF4cF2CLS3iN8XQteHEHfpWlUcKjwEB0e2KbwoN64NLXl3UhMOguRnd/T771ygIwFQpJSyy4Bn6/0IrmapLTjf7Id4Og4gkvJ2bETrcTRwDFoJ/RFt6K/8iLm669JLaWt1UMcWSL4vbEvwB5XD+94rRIH7uPoNItumV8zqDdVHNCL8kXSYNUsLLy3plhVjW5a5RFX9MTRGiP8E9vnCEqwBuc4spow==",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "tool_name": "search",
+          "args": {
+            "query": "agentic design principles"
+          },
+          "tool_call_id": "pyd_ai_5ad67c6241b5476b927051a30f0ca9c6",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 240,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 58,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 42,
+          "text_prompt_tokens": 240
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-13T17:53:08.477718+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "gjztaJWaNvbUz7IP4brM4QI",
+      "finish_reason": "stop"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 0,
+              "content": "[![How to Design Good AI Agents](./images/lesson-3-thumbnail.png)](https://youtu.be/m9lM8qqoOEA?si=4KimounNKvArQQ0K)\n\n> _(Click the image above to view video of this lesson)_\n# AI Agentic Design Principles\n\n## Introduction\n\nThere are many ways to think about building AI Agentic Systems. Given that ambiguity is a feature and not a bug in Generative AI design, it\u2019s sometimes difficult for engineers to figure out where to even start. We have created a set of human-centric UX Design Principles to enable developers to build customer-centric agentic systems to solve their business needs. These design principles are not a prescriptive architecture but rather a starting point for teams who are defining and building out agent experiences.\n\nIn general, agents should:\n\n- Broaden and scale human capacities (brainstorming, problem-solving, automation, etc.)\n- Fill in knowledge gaps (get me up-to-speed on knowledge domains, translation, etc.)\n- Facilitate and support collaboration in the ways we as individuals prefer to work with others\n- Make us better versions of ourselves (e.g., life coach/task master, helping us learn emotional regulation and mindfulness skills, building resilience, etc.)\n\n## This Lesson Will Cover\n\n- What are the Agentic Design Principles\n- What are some guidelines to follow while implementing these design principles\n- What are some examples of using the design principles\n\n## Learning Goals\n\nAfter completing this lesson, you will be able to:\n\n1. Explain what the Agentic Design Principles are\n2. Explain the guidelines for using the Agentic Design Principles\n3. Understand how to build an agent using the Agentic Design Principles\n\n## The Agentic Design Principles\n\n![Agentic Design Principles](./images/agentic-design-principles.png)\n\n### Agent (Space)\n\nThis is the environment in which the agent operates. These principles inform how we design agents for engaging in physical and digital worlds.\n\n- **Connecting, not collapsing** \u2013 help connect people to other peopl",
+              "filename": "03-agentic-design-patterns/README.md"
+            },
+            {
+              "start": 0,
+              "content": "<!--\nCO_OP_TRANSLATOR_METADATA:\n{\n  \"original_hash\": \"4c46e4ff9e349c521e2b0b17f51afa64\",\n  \"translation_date\": \"2025-08-30T13:07:16+00:00\",\n  \"source_file\": \"03-agentic-design-patterns/README.md\",\n  \"language_code\": \"en\"\n}\n-->\n[![How to Design Good AI Agents](../../../translated_images/lesson-3-thumbnail.1092dd7a8f1074a5b26e35aa8f810814e05a22fed1765c20c14b2b508c7ae379.en.png)](https://youtu.be/m9lM8qqoOEA?si=4KimounNKvArQQ0K)\n\n> _(Click the image above to view video of this lesson)_\n# AI Agentic Design Principles\n\n## Introduction\n\nThere are many ways to think about building AI Agentic Systems. Given that ambiguity is a feature and not a bug in Generative AI design, it\u2019s sometimes difficult for engineers to figure out where to even start. We have created a set of human-centric UX Design Principles to enable developers to build customer-centric agentic systems to solve their business needs. These design principles are not a prescriptive architecture but rather a starting point for teams who are defining and building out agent experiences.\n\nIn general, agents should:\n\n- Broaden and scale human capacities (brainstorming, problem-solving, automation, etc.)\n- Fill in knowledge gaps (get me up-to-speed on knowledge domains, translation, etc.)\n- Facilitate and support collaboration in the ways we as individuals prefer to work with others\n- Make us better versions of ourselves (e.g., life coach/task master, helping us learn emotional regulation and mindfulness skills, building resilience, etc.)\n\n## This Lesson Will Cover\n\n- What are the Agentic Design Principles\n- What are some guidelines to follow while implementing these design principles\n- What are some examples of using the design principles\n\n## Learning Goals\n\nAfter completing this lesson, you will be able to:\n\n1. Explain what the Agentic Design Principles are\n2. Explain the guidelines for using the Agentic Design Principles\n3. Understand how to build an agent using the Agentic Design Principles\n\n## The Agentic Design P",
+              "filename": "translations/en/03-agentic-design-patterns/README.md"
+            },
+            {
+              "start": 1000,
+              "content": "individuals prefer to work with others\n- Make us better versions of ourselves (e.g., life coach/task master, helping us learn emotional regulation and mindfulness skills, building resilience, etc.)\n\n## This Lesson Will Cover\n\n- What are the Agentic Design Principles\n- What are some guidelines to follow while implementing these design principles\n- What are some examples of using the design principles\n\n## Learning Goals\n\nAfter completing this lesson, you will be able to:\n\n1. Explain what the Agentic Design Principles are\n2. Explain the guidelines for using the Agentic Design Principles\n3. Understand how to build an agent using the Agentic Design Principles\n\n## The Agentic Design Principles\n\n![Agentic Design Principles](./images/agentic-design-principles.png)\n\n### Agent (Space)\n\nThis is the environment in which the agent operates. These principles inform how we design agents for engaging in physical and digital worlds.\n\n- **Connecting, not collapsing** \u2013 help connect people to other people, events, and actionable knowledge to enable collaboration and connection.\n- Agents help connect events, knowledge, and people.\n- Agents bring people closer together. They are not designed to replace or belittle people.\n- **Easily accessible yet occasionally invisible** \u2013 agent largely operates in the background and only nudges us when it is relevant and appropriate.\n  - Agent is easily discoverable and accessible for authorized users on any device or platform.\n  - Agent supports multimodal inputs and outputs (sound, voice, text, etc.).\n  - Agent can seamlessly transition between foreground and background; between proactive and reactive, depending on its sensing of user needs.\n  - Agent may operate in invisible form, yet its background process path and collaboration with other Agents are transparent to and controllable by the user.\n\n### Agent (Time)\n\nThis is how the agent operates over time. These principles inform how we design agents interacting across the past, present, and future.",
+              "filename": "03-agentic-design-patterns/README.md"
+            },
+            {
+              "start": 1000,
+              "content": "who are defining and building out agent experiences.\n\nIn general, agents should:\n\n- Broaden and scale human capacities (brainstorming, problem-solving, automation, etc.)\n- Fill in knowledge gaps (get me up-to-speed on knowledge domains, translation, etc.)\n- Facilitate and support collaboration in the ways we as individuals prefer to work with others\n- Make us better versions of ourselves (e.g., life coach/task master, helping us learn emotional regulation and mindfulness skills, building resilience, etc.)\n\n## This Lesson Will Cover\n\n- What are the Agentic Design Principles\n- What are some guidelines to follow while implementing these design principles\n- What are some examples of using the design principles\n\n## Learning Goals\n\nAfter completing this lesson, you will be able to:\n\n1. Explain what the Agentic Design Principles are\n2. Explain the guidelines for using the Agentic Design Principles\n3. Understand how to build an agent using the Agentic Design Principles\n\n## The Agentic Design Principles\n\n![Agentic Design Principles](../../../translated_images/agentic-design-principles.1cfdf8b6d3cc73c2b738951ee7b2043e224441d98babcf654be69d866120f93a.en.png)\n\n### Agent (Space)\n\nThis is the environment in which the agent operates. These principles inform how we design agents for engaging in physical and digital worlds.\n\n- **Connecting, not collapsing** \u2013 help connect people to other people, events, and actionable knowledge to enable collaboration and connection.\n- Agents help connect events, knowledge, and people.\n- Agents bring people closer together. They are not designed to replace or belittle people.\n- **Easily accessible yet occasionally invisible** \u2013 agent largely operates in the background and only nudges us when it is relevant and appropriate.\n  - Agent is easily discoverable and accessible for authorized users on any device or platform.\n  - Agent supports multimodal inputs and outputs (sound, voice, text, etc.).\n  - Agent can seamlessly transition between foreground an",
+              "filename": "translations/en/03-agentic-design-patterns/README.md"
+            },
+            {
+              "start": 4000,
+              "content": "y needs, and is freely customizable.\n  - Agent is shaped by and evolves through continuous user interaction.\n\n### Agent (Core)\n\nThese are the key elements in the core of an agent\u2019s design.\n\n- **Embrace uncertainty but establish trust**.\n  - A certain level of Agent uncertainty is expected. Uncertainty is a key element of agent design.\n  - Trust and transparency are foundational layers of Agent design.\n  - Humans are in control of when the Agent is on/off and Agent status is clearly visible at all times.\n\n## The Guidelines to Implement These Principles\n\nWhen you\u2019re using the previous design principles, use the following guidelines:\n\n1. **Transparency**: Inform the user that AI is involved, how it functions (including past actions), and how to give feedback and modify the system.\n2. **Control**: Enable the user to customize, specify preferences and personalize, and have control over the system and its attributes (including the ability to forget).\n3. **Consistency**: Aim for consistent, multi-modal experiences across devices and endpoints. Use familiar UI/UX elements where possible (e.g., microphone icon for voice interaction) and reduce the customer\u2019s cognitive load as much as possible (e.g., aim for concise responses, visual aids, and \u2018Learn More\u2019 content).\n\n## How To Design a Travel Agent using These Principles and Guidelines\n\nImagine you are designing a Travel Agent, here is how you could think about using the Design Principles and Guidelines:\n\n1. **Transparency** \u2013 Let the user know that the Travel Agent is an AI-enabled Agent. Provide some basic instructions on how to get started (e.g., a \u201cHello\u201d message, sample prompts). Clearly document this on the product page. Show the list of prompts a user has asked in the past. Make it clear how to give feedback (thumbs up and down, Send Feedback button, etc.). Clearly articulate if the Agent has usage or topic restrictions.\n2. **Control** \u2013 Make sure it\u2019s clear how the user can modify the Agent after it\u2019s been created wit",
+              "filename": "03-agentic-design-patterns/README.md"
+            }
+          ],
+          "tool_call_id": "pyd_ai_5ad67c6241b5476b927051a30f0ca9c6",
+          "metadata": null,
+          "timestamp": "2025-10-13T17:53:08.490469+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You have access to comprehensive documentation about Microsoft's AI agent framework, \nincluding setup guides, API references, best practices, and troubleshooting information.\n\nInstructions:\n1. ALWAYS use the search tool to find relevant information\n2. Provide specific, accurate answers from the documentation\n3. Include citations by mentioning the source file\n4. If information is not found, clearly state this and provide general guidance\n5. Be concise but comprehensive\n\nAlways include references by citing the filename of the source material you used.  \nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "",
+          "id": null,
+          "signature": "CisB0e2Kb8AFO0F0UpdOqyQRrmHlsjvwC06RjSJG0P9A+KOWXUMbzBOdCcrxCo4BAdHtim/YANTbLdS5CWKGX9hiFSwg0i1GP9Wng+a5yKfKkJD7VSVkqZ92mYJj9kYhj4bqlgJvlefANfd+chVK1hTkqYvgdbob8kXLkB4VxuIGWfS6H4iS8ylm03f9XZmNRkr9Mvn7tpVv7imqLoq4zyi20TId4+nxONUsNYBuS4PQu7IxpNYX+VSgU5f1hAqaAgHR7YpvsYCTzjKJCBKHQqDJw644RcQ9M2jkMm7pArYL4fKeaqa3I58Jfm+R+nP2XIzlNvllOaIEHaZMGCDBuR37Dv6WZ684cqITIby7QBc+N0lY/HztmPj4lhiaeLXOxT2v0C71vFU9Z6F9T1N9IRrt37uWTYogHQlQYb24LGyUtgeAMp2SAm6qk9OomYp1ZgcHpHSL6lgfiLfIJn8xQmJ4GuofBCNXvedzvRtQBjVrviaGAZXD13UsB9o9xSII4sUadEK1GM0qPXybeAwXfKnJ6tTLWZPvvVpO7BWs1JPSQXcAJPtjFZr/DWE5o0Y1pcwjs8BUc6lKCLS4vnjUaq43C+aZ1ce1rTuDETqeBKaGusVkNme/PKulgwqSAgHR7YpvOEgef7Uo/sDjGUmYB1X65zZ53O+97/10WSXjuGCaQrxnxiOAOcXTA3sGH+Aw/+2p/Y1Qy2g2O491r5lKWWTxpCFxRYkFzEdVSuBMtzok5OSsWLP1XY3y54525kTsDZVZri3yRj/2UxE/6fcw9iKpQTABCNQOuvoRRilC26/nGpwZvocMDhLA72maeSFhW43D/AN2wGaWV4BCSzAAhXURh7bcm/FSDz480WvwCSjv8qBFy1ctF7jCer3iaBy3/BLBkpFSei/RNmkG7uU5NWNifo0faIKcZxe0BTwhE7mHxzt2InGGyWGoNW86BHTrvrticiQHNGOrg+WPAcSaziIgpZr/R84byoE0y51GJM8KiwEB0e2Kb/vfGQUuiKZ8Nf81ALpGMl4A5YeKL4Q7+APoWAI6akuW1wUv8vKyf6NIcT6Rs+l0xobzJT5GUGW25ry0/GwCcmJukL8K6Xh6NERbIaVWygSYtPRzbHLB2QF9/VbU6AjBakSCOWaDATccFMf8yS+zU+A2ku+BCY7/RbxIIff+8uT2aVsyaaqT",
+          "provider_name": "google-gla",
+          "part_kind": "thinking"
+        },
+        {
+          "content": "AI Agentic Design Principles are a set of human-centric UX design principles created to help developers build customer-centric agentic systems. These principles offer a starting point for defining and building agent experiences rather than a prescriptive architecture [03-agentic-design-patterns/README.md](https://github.com/microsoft/AI-Agentic-Framework/blob/main/03-agentic-design-patterns/README.md).\n\nIn general, agents should:\n*   Broaden and scale human capacities (e.g., brainstorming, problem-solving, automation).\n*   Fill in knowledge gaps (e.g., provide information on knowledge domains, translation).\n*   Facilitate and support collaboration.\n*   Make us better versions of ourselves (e.g., life coach, task master, helping learn emotional regulation and mindfulness skills, building resilience) [03-agentic-design-patterns/README.md](https://github.com/microsoft/AI-Agentic-Framework/blob/main/03-agentic-design-patterns/README.md).\n\nThe Agentic Design Principles are categorized as follows:\n\n### Agent (Space)\nThese principles relate to the environment in which the agent operates and how agents are designed for engaging in physical and digital worlds:\n*   **Connecting, not collapsing**: Agents should help connect people to other people, events, and actionable knowledge to enable collaboration and connection. They are not designed to replace or belittle people.\n*   **Easily accessible yet occasionally invisible**: Agents largely operate in the background, nudging users only when relevant. They should be easily discoverable and accessible on any device or platform, support multimodal inputs and outputs, and seamlessly transition between foreground and background, proactive and reactive states. Even in invisible form, their processes and collaboration with other agents should be transparent and controllable by the user [03-agentic-design-patterns/README.md](https://github.com/microsoft/AI-Agentic-Framework/blob/main/03-agentic-design-patterns/README.md).\n\n### Agent (Time)\nThese principles concern how the agent operates over time and interacts across the past, present, and future:\n*   **Continuously learning but respectfully forgetting**: Agents continuously learn from user interactions and external data, adapting to user needs and preferences over time. They should respect user privacy by managing data based on user intent and preferences.\n*   **Proactive anticipation but always optional**: Agents anticipate user needs and proactively offer relevant assistance, but users should always have control to accept, reject, or ignore suggestions.\n*   **Contextually aware but always controllable**: Agents are aware of the user's current context (time, location, activity) to provide relevant support, and their operation should always be controllable by the user, including the ability to turn them on/off, modify settings, or clear memory [03-agentic-design-patterns/README.md](https://github.com/microsoft/AI-Agentic-Framework/blob/main/03-agentic-design-patterns/README.md).\n\n### Agent (Core)\nThese are the key elements in the core of an agent\u2019s design:\n*   **Embrace uncertainty but establish trust**: A certain level of agent uncertainty is expected and is a key element of agent design. Trust and transparency are foundational layers, with humans in control of the agent's on/off status, which should be clearly visible at all times [03-agentic-design-patterns/README.md](https://github.com/microsoft/AI-Agentic-Framework/blob/main/03-agentic-design-patterns/README.md).\n\n### Guidelines for Implementation\nWhen implementing these design principles, the following guidelines should be used:\n1.  **Transparency**: Inform the user that AI is involved, how it functions (including past actions), and how to give feedback and modify the system.\n2.  **Control**: Enable the user to customize, specify preferences, personalize, and have control over the system and its attributes (including the ability to forget).\n3.  **Consistency**: Aim for consistent, multi-modal experiences across devices and endpoints. Use familiar UI/UX elements where possible and reduce the customer\u2019s cognitive load [03-agentic-design-patterns/README.md](https://github.com/microsoft/AI-Agentic-Framework/blob/main/03-agentic-design-patterns/README.md).",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2938,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 1092,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {
+          "thoughts_tokens": 144,
+          "text_prompt_tokens": 2938
+        }
+      },
+      "model_name": "gemini-2.5-flash",
+      "timestamp": "2025-10-13T17:53:11.455499+00:00",
+      "kind": "response",
+      "provider_name": "google-gla",
+      "provider_details": {
+        "finish_reason": "STOP"
+      },
+      "provider_response_id": "hTztaOKhAsnUz7IP072l4QI",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}
