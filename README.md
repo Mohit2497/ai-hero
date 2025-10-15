@@ -36,8 +36,8 @@ This project implements a comprehensive Retrieval-Augmented Generation (RAG) sys
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/ms-ai-agents-assistant.git
-   cd ms-ai-agents-assistant
+   git clone https://github.com/Mohit2497/ai-hero.git   
+   cd ai-hero
    ```
 
 2. **Create virtual environment**:
