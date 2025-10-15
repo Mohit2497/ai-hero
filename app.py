@@ -12,7 +12,7 @@ from datetime import datetime
 from pathlib import Path
 import logging
 
-from app import ingest, search_agent, logs
+from src import ingest, search_agent, logs
 
 logger = logging.getLogger(__name__)
 
