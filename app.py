@@ -26,10 +26,10 @@ MAX_REQUESTS_PER_DAY = 1500
 MAX_TOKENS_PER_MINUTE = 1000000
 REQUEST_COOLDOWN = 6.0  # seconds
 
+
 # ============================================================================#
 # RATE LIMITER CLASS
 # ============================================================================#
-
 class RateLimiter:
     def __init__(self):
         self.load_state()
@@ -38,11 +38,11 @@ class RateLimiter:
     def load_state(self):
         if RATE_LIMIT_FILE.exists():
             try:
-                with open(RATE_LIMIT_FILE, 'r') as f:
+                with open(RATE_LIMIT_FILE, "r") as f:
                     state = json.load(f)
-                    self.minute_requests = [float(t) for t in state.get('minute_requests', [])]
-                    self.daily_requests = [float(t) for t in state.get('daily_requests', [])]
-                    self.last_request_time = state.get('last_request_time', 0)
+                    self.minute_requests = [float(t) for t in state.get("minute_requests", [])]
+                    self.daily_requests = [float(t) for t in state.get("daily_requests", [])]
+                    self.last_request_time = state.get("last_request_time", 0)
             except Exception:
                 self.reset_state()
         else:
@@ -56,12 +56,12 @@ class RateLimiter:
 
     def save_state(self):
         state = {
-            'minute_requests': self.minute_requests,
-            'daily_requests': self.daily_requests,
-            'last_request_time': self.last_request_time
+            "minute_requests": self.minute_requests,
+            "daily_requests": self.daily_requests,
+            "last_request_time": self.last_request_time,
         }
         try:
-            with open(RATE_LIMIT_FILE, 'w') as f:
+            with open(RATE_LIMIT_FILE, "w") as f:
                 json.dump(state, f)
         except Exception as e:
             print(f"Error saving rate limit state: {e}")
@@ -109,26 +109,26 @@ class RateLimiter:
 
     def get_stats(self):
         self.clean_old_requests()
-        current_time = time.time()
         minute_remaining = MAX_REQUESTS_PER_MINUTE - len(self.minute_requests)
         daily_remaining = MAX_REQUESTS_PER_DAY - len(self.daily_requests)
         return {
-            'minute_used': len(self.minute_requests),
-            'minute_limit': MAX_REQUESTS_PER_MINUTE,
-            'minute_remaining': minute_remaining,
-            'daily_used': len(self.daily_requests),
-            'daily_limit': MAX_REQUESTS_PER_DAY,
-            'daily_remaining': daily_remaining,
-            'tokens_per_minute': MAX_TOKENS_PER_MINUTE
+            "minute_used": len(self.minute_requests),
+            "minute_limit": MAX_REQUESTS_PER_MINUTE,
+            "minute_remaining": minute_remaining,
+            "daily_used": len(self.daily_requests),
+            "daily_limit": MAX_REQUESTS_PER_DAY,
+            "daily_remaining": daily_remaining,
+            "tokens_per_minute": MAX_TOKENS_PER_MINUTE,
         }
+
 
 # ============================================================================#
 # CACHE RESOURCES
 # ============================================================================#
-
 @st.cache_resource
 def get_rate_limiter():
     return RateLimiter()
+
 
 @st.cache_resource
 def load_agent(repo_owner: str, repo_name: str):
@@ -139,10 +139,13 @@ def load_agent(repo_owner: str, repo_name: str):
         index = ingest.index_data(repo_owner, repo_name, use_cache=True, cache_filepath=str(cache_file))
     else:
         logger.info("Building fresh index...")
-        index = ingest.index_data(repo_owner, repo_name, chunk=True, chunking_params={'size': 2000, 'step': 1000}, use_cache=False)
+        index = ingest.index_data(
+            repo_owner, repo_name, chunk=True, chunking_params={"size": 2000, "step": 1000}, use_cache=False
+        )
 
     agent = search_agent.init_agent(index, repo_owner, repo_name)
     return agent
+
 
 def run_async(coro):
     try:
@@ -152,22 +155,27 @@ def run_async(coro):
         asyncio.set_event_loop(loop)
     return loop.run_until_complete(coro)
 
+
 async def get_agent_response(agent, user_prompt: str):
     response = await agent.run(user_prompt=user_prompt)
     return response.output if hasattr(response, "output") else str(response)
 
+
 # ============================================================================#
 # STREAMLIT PAGE SETUP
 # ============================================================================#
-
 st.set_page_config(page_title="AI Agents Assistant", page_icon="🎓", layout="wide")
-st.markdown("""
+
+st.markdown(
+    """
 <style>
 .chat-message.user { background: #DCF8C6; border-radius:15px; padding:10px; margin:5px 0; }
 .chat-message.assistant { background: #E8EAF6; border-radius:15px; padding:10px; margin:5px 0; }
 .sidebar .stButton button { width: 100%; }
 </style>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 st.title("🤖 Repo Assistant")
 st.caption("Learn about AI agents using Microsoft's documentation.")
@@ -181,7 +189,7 @@ rate_limiter = get_rate_limiter()
 stats = rate_limiter.get_stats()
 
 st.sidebar.markdown("### Rate Limit Status")
-st.sidebar.progress(min(stats['minute_used'], stats['minute_limit']) / stats['minute_limit'])
+st.sidebar.progress(min(stats["minute_used"], stats["minute_limit"]) / stats["minute_limit"])
 st.sidebar.markdown(f"- Minute: {stats['minute_used']}/{stats['minute_limit']} used")
 st.sidebar.markdown(f"- Daily: {stats['daily_used']}/{stats['daily_limit']} used")
 
@@ -193,9 +201,8 @@ if st.sidebar.button("Download Chat"):
     st.sidebar.download_button("Download JSON", chat_json, file_name="chat.json")
 
 # ============================================================================#
-# INITIALIZE AGENT
+# INITIALIZE AGENT AND CHAT SESSION
 # ============================================================================#
-
 try:
     if "agent_loaded" not in st.session_state:
         with st.spinner("Initializing AI Assistant..."):
@@ -207,17 +214,14 @@ try:
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
-    # Display chat history
+    # Render chat history
     for msg in st.session_state.messages:
-        role_icon = "🧑" if msg["role"] == "user" else "🤖"
-        timestamp = msg.get("time", datetime.now().strftime("%H:%M"))
         with st.chat_message(msg["role"]):
-            st.markdown(f"**{role_icon} [{timestamp}]**: {msg['content']}")
+            st.markdown(msg["content"])
 
     # -------------------------------
     # Chat input (conversational + domain-specific)
     # -------------------------------
-
     def generate_response(user_text: str) -> str:
         """
         Decide if this is small talk or a domain question,
@@ -230,56 +234,44 @@ try:
         text_lower = user_text.strip().lower()
 
         if any(word in text_lower for word in greetings):
-            return "🤖 Hi there! How can I help you with AI agents today?"
+            return "👋 Hey there! How can I help you learn about Microsoft AI Agents today?"
         elif any(word in text_lower for word in farewells):
-            return "🤖 Goodbye! Feel free to ask more about AI agents anytime."
+            return "👋 See you later! Come back anytime to learn more about AI agents."
         elif any(word in text_lower for word in thanks):
-            return "🤖 You're welcome! Do you have any more questions about AI agents?"
+            return "😊 You’re very welcome! Would you like to dive deeper into any specific AI concept?"
         else:
-            return None  # signal to query AI agent
+            return None  # Let AI agent handle it
 
-    if prompt := st.chat_input("Ask about AI agents, concepts, or implementations..."):
+    if prompt := st.chat_input("Ask about AI agents, frameworks, or implementations..."):
 
-        # Check for small talk first
+        with st.chat_message("user"):
+            st.markdown(prompt)
+        st.session_state.messages.append({"role": "user", "content": prompt})
+
+        # Handle small talk or call the model
         response_output = generate_response(prompt)
 
         if response_output is None:
-            # Domain-specific question: call the AI agent
             can_request, msg_status = rate_limiter.can_make_request()
             if not can_request:
                 st.warning(msg_status)
                 response_output = "⚠️ " + msg_status
             else:
                 rate_limiter.record_request()
-
-                # Use last 5 messages as context
-                context = "\n".join(
-                    [f"{m['role']}: {m['content']}" for m in st.session_state.messages[-5:]]
-                )
-
+                context = "\n".join([f"{m['role']}: {m['content']}" for m in st.session_state.messages[-5:]])
                 conv_prompt = (
-                    "Answer concisely and conversationally, staying on topic about AI agents.\n\n"
-                    f"Context:\n{context}\n\nQuestion: {prompt}"
+                    "You are a friendly and concise assistant specialized in Microsoft's AI Agents documentation.\n"
+                    "Keep responses conversational and informative.\n\n"
+                    f"Context:\n{context}\n\nUser question: {prompt}"
                 )
 
                 with st.spinner("🤔 Thinking..."):
                     response_output = run_async(get_agent_response(agent, conv_prompt))
 
-        # Display user message
-        st.session_state.messages.append(
-            {"role": "user", "content": prompt, "time": datetime.now().strftime("%H:%M")}
-        )
-        with st.chat_message("user"):
-            st.markdown(prompt)
-
-        # Display assistant response
-        st.session_state.messages.append(
-            {"role": "assistant", "content": response_output, "time": datetime.now().strftime("%H:%M")}
-        )
         with st.chat_message("assistant"):
             st.markdown(response_output)
+        st.session_state.messages.append({"role": "assistant", "content": response_output})
 
-        # Log interaction (optional)
         try:
             logs.log_interaction_to_file(
                 agent,
