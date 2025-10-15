@@ -6,7 +6,7 @@ import os
 import logging
 from dotenv import load_dotenv
 from pydantic_ai import Agent
-from app import search_tools
+from src import search_tools
 
 load_dotenv()
 
